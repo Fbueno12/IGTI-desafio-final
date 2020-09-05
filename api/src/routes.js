@@ -1,17 +1,15 @@
 import express from "express";
+import ReleaseController from "./controller/ReleaseController.js";
 
 const routes = express.Router();
-const transactionRoutes = express.Router();
+const releaseRoutes = express.Router();
 
 routes.use(express.json());
-routes.get('/', (request, response) => {
-    return response.json({ok: "API is working!!"});
-});
 
-transactionRoutes.get('/', (request, response) => {
-    return response.json({ok: "Transaction route works"})
-})
+releaseRoutes.get('/', ReleaseController.find);
+releaseRoutes.get('/:name', ReleaseController.find);
+releaseRoutes.post('/', ReleaseController.store);
 
-routes.use('/api/transactions', transactionRoutes);
+routes.use('/api/releases', releaseRoutes);
 
 export default routes;

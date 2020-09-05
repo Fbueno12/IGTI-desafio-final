@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import Error from "../shared/Error.js";
+import AppError from "../shared/AppError.js";
 
 dotenv.config();
 

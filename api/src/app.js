@@ -1,11 +1,11 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-
-import routes from "./routes.js";
+import "express-async-errors";
 
 import "./config/database.js";
-import "express-async-error";
+import routes from "./routes.js";
+import AppError from "./shared/AppError.js";
 
 dotenv.config();
 const { PORT } = process.env;
@@ -15,7 +15,7 @@ app.use(cors());
 app.use(routes);
 
 app.use((err, request, response, _) => {
-    if (err instanceof Error) {
+    if (err instanceof AppError) {
         return response.status(err.statusCode).json({
             status: "error",
             message: err.message,
