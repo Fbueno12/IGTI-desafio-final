@@ -1,0 +1,25 @@
+{
+    "name": "igti_desafio_final_api",
+    "version": "1.0.0",
+    "description": "Repositório criado para o desenvolvimento do desafio final do bootcamp fullstack da IGTI, a aplicação é um gestor de finanças com foco no cadastro de gastos e lucros cadastrados pelo usuário.",
+    "main": "./src/app.js",
+    "scripts": {
+        "dev": "nodemon ./src/app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Felipe Ferreira Bueno",
+    "license": "MIT",
+    "type": "module",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-async-error": "^0.0.2",
+        "mongodb": "^3.6.1",
+        "mongoose": "^5.10.3"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.4"
+    }
+}
