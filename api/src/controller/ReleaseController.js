@@ -10,6 +10,11 @@ const ReleaseController = {
         return response.json(releases);
     },
 
+    async findByName(request, response) {
+        const releases = await FindReleaseByNameService.execute(request);
+        return response.json(releases.transactions);
+    },
+
     async store(request, response) {
         const release = await CreateReleaseService.execute(request);
         return response.json(release);

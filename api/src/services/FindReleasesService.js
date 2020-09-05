@@ -28,8 +28,6 @@ const FindReleasesService = {
                 }
             });
 
-            console.log(income, outcome);
-
             let result = {
                 length: releases.length,
                 income: formatter.format(income),

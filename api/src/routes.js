@@ -7,7 +7,7 @@ const releaseRoutes = express.Router();
 routes.use(express.json());
 
 releaseRoutes.get('/', ReleaseController.find);
-releaseRoutes.get('/:name', ReleaseController.find);
+releaseRoutes.get('/:name', ReleaseController.findByName);
 releaseRoutes.post('/', ReleaseController.store);
 releaseRoutes.put('/:id', ReleaseController.update);
 releaseRoutes.delete('/:id', ReleaseController.delete);
