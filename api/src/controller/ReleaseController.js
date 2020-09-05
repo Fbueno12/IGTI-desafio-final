@@ -7,7 +7,7 @@ const ReleaseController = {
 
     async find(request, response) {
         const releases = await FindReleaseByNameService.execute(request);
-        return response.json({length: releases.length,transactions: releases});
+        return response.json(releases);
     },
 
     async store(request, response) {
