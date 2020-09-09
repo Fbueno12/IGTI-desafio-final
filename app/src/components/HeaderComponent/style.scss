@@ -1,0 +1,113 @@
+.header-container {
+  width: 100%;
+  min-height: 250px;
+  padding-top: 30px;
+  margin-bottom: -110px;
+  background-color: #5636d3;
+  display: flex;
+  justify-content: space-between;
+
+  h1 {
+    color: #fff;
+    font-size: 22px;
+    margin: 15px 0 0 20px;
+  }
+}
+.newRelease {
+  width: fit-content;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 15px;
+  margin-top: 10px;
+  color: #fff;
+  background: inherit;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 200ms linear;
+
+  &:hover, &:hover .addButton{
+    color: #ededed;
+    background-color: #00c000;
+  }
+
+  .addButton {
+    margin-right: 10px;
+    color: #fff;
+    background-color: green;
+    border-radius: 50%;
+    transition: background-color 200ms linear;
+  }
+}
+
+#add_popup_container {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+
+  .content {
+    width: 550px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #d1d1d2;
+
+    .header {
+      width: 70%;
+      display: flex;
+      justify-content: space-between;
+      align-self: flex-end;
+      align-items: center;
+      margin-bottom: 50px;
+
+      svg {
+        cursor: pointer;
+        border-radius: 50%;
+        transition: 200ms linear;
+
+        &:hover {
+          background-color: red;
+          color: #fff;
+        }
+      }
+    }
+
+    .body {
+      display: flex;
+      flex-direction: column;
+
+      .input-field-container {
+        width: 250px;
+        margin-bottom: 15px;
+
+        input {
+          width: 100%;
+          padding: 10px;
+          border: none;
+          outline: none;
+          margin-top: 5px;
+          border-radius: 5px;
+        }
+      }
+      .input-field-radio-container {
+        display: flex;
+        flex-direction: column;
+
+        .radio-content {
+          display: flex;
+          justify-content: space-evenly;
+        }
+      }
+    }
+  }
+}
