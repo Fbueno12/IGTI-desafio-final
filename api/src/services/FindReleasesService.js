@@ -20,12 +20,14 @@ const FindReleasesService = {
                 yearMonth: period,
                 description: new RegExp(name, "i"),
             });
-            releases.forEach((release) => {
+            const formattedReleases = releases.map((release) => {
                 if (release.type == "+") {
                     income += Number(release.value);
                 } else {
                     outcome += Number(release.value);
                 }
+                
+                return {formattedValue: formatter.format(release.value),...release._doc};
             });
 
             let result = {
@@ -33,7 +35,7 @@ const FindReleasesService = {
                 income: formatter.format(income),
                 outcome: formatter.format(outcome),
                 total: formatter.format(income - outcome),
-                transactions: releases,
+                transactions: formattedReleases,
             };
 
             return result;
