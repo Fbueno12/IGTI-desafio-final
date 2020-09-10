@@ -1,10 +1,5 @@
 import { format, addYears, subYears, isBefore, addMonths } from "date-fns";
 
-function getCurrentPeriod() {
-  const current = new Date();
-  return format(current, "yyyy-MM");
-}
-
 function getRangeOfPeriods() {
   const currentDate = new Date();
 
@@ -16,7 +11,7 @@ function getRangeOfPeriods() {
   const rangeOfPeriods = [];
   let aux_period = minRange;
   while (isBefore(aux_period, maxRange)) {
-    rangeOfPeriods.push(format(aux_period, "yyyy-MM"));
+    rangeOfPeriods.push(aux_period);
     aux_period = addMonths(aux_period, 1);
   }
   return rangeOfPeriods;
@@ -26,10 +21,10 @@ function getPeriods(rangeOfPeriods) {
   const options = [];
   if (rangeOfPeriods) {
     rangeOfPeriods.forEach((period) => {
-      options.push({ label: period, value: period });
+      options.push({ label: format(period, 'MMM yyyy'), value: format(period, 'yyyy-MM') });
     });
   }
   return options;
 }
 
-export {getCurrentPeriod, getRangeOfPeriods, getPeriods}
+export {getRangeOfPeriods, getPeriods}
