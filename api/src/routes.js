@@ -12,6 +12,8 @@ releaseRoutes.post('/', ReleaseController.store);
 releaseRoutes.put('/:id', ReleaseController.update);
 releaseRoutes.delete('/:id', ReleaseController.delete);
 
+releaseRoutes.get('/fetch/:id', ReleaseController.findById);
+
 routes.use('/api/releases', releaseRoutes);
 
 export default routes;
